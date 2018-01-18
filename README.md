@@ -14,3 +14,4 @@ You can edit gulpfile.js to improve certain reports
 #### Teams
 - git shortlog -s | cut -c8-
 - Setup your teams with the data above
+- Or use Git .mailmap to map authors

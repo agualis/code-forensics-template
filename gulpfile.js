@@ -6,7 +6,7 @@ let defaultParams = function () {
   addDefaultParam('dateFrom', '2017-01-01')
   addDefaultParam('minWordCount', '2')
   // Just used for system-evolution-analysis
-  //addDefaultParam('timeSplit', '6m')
+  //addDefaultParam('timeSplit', 'eom')
   //addDefaultParam('layerGroup', 'main')
 
   const params = minimist(process.argv)
@@ -24,9 +24,10 @@ defaultParams()
 require('code-forensics').configure(
   {
     repository: {
-      rootPath: "[relative or absolute path to my root git folder]",
+      rootPath: "../vue",
       includePaths: [
         './src/',
+        './test/',
         // './config'
       ],
       excludePaths: [
@@ -37,13 +38,22 @@ require('code-forensics').configure(
     },
     languages: ["javascript"],
     contributors: {
-      'Locales': [
-        ['Nestor Salceda', 'Néstor Salceda'],
-        ['Javi Rubio']
+      'Official Members': [
+        ['Evan You', 'YOU'],
+        ['Eduardo San Martin Morote'],
+        ['katashin'],
+        ['Chris Fritz'],
+        ['Blake Newman'],
+        ['kazuya kawaguchi'],
+        ['chengchao']
       ],
-      'Foranos': [
-        ['Alberto Gualis', 'Alberto Gualis Giménez'],
-        ['Dani Latorre'],
+      'External': [
+        ['Hanks'],
+        ['AchillesJ'],
+        ['Herrington Darkholme'],
+        ['JK'],
+        ['Phan An'],
+        ['laoxiong']
       ]
     },
     commitMessageFilters: [
@@ -54,14 +64,9 @@ require('code-forensics').configure(
       function(word) { return word.length <= 2; }
     ],
     layerGroups: {
-      'test': [
-        { name: 'Unit Tests', paths: [/_test_\/.*[._]spec\..*/] },
-        { name: 'E2E Tests', paths: ['cypress'] }
-      ],
       'main': [
-        { name: 'components', paths: ['src/components'] },
-        { name: 'pages', paths: ['src/pages'] },
-        { name: 'vuex', paths: ['src/vuex'] }
+        { name: 'test', paths: ['test/'] },
+        { name: 'src', paths: ['src/'] },
       ]  }
   }
 );
@@ -80,10 +85,11 @@ gulp.task('all', [
 });
 
 gulp.task('file', [
-  'sloc-trend-analysis',
-  'javascript-complexity-trend-analysis',
-  'temporal-coupling-analysis'],
+   'sloc-trend-analysis',
+   'javascript-complexity-trend-analysis',
+  //'temporal-coupling-analysis'
+  ],
   function() {
-  // Sample: gulp file --targetFile=./src/vuex/store.js --dateFrom=2010-10-10 --timeSplit=3m
+  // Sample: gulp file --targetFile=./src/core/vdom/patch.js [--timeSplit=eom]
   // temporal-coupling-analysis is not working
 });
