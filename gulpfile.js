@@ -24,36 +24,43 @@ defaultParams()
 require('code-forensics').configure(
   {
     repository: {
-      rootPath: "../vue",
+      rootPath: "../angular",
       includePaths: [
-        './src/',
-        './test/',
+        './packages/core',
+        './packages/compiler',
+        './packages/common',
+        './packages/animations',
+        './packages/router',
         // './config'
       ],
       excludePaths: [
         '**/+(*.jpg|*.png|*.gif)',
-        './node_modules',
+        './packages/common/locales',
         './tmp'
       ],
     },
     languages: ["javascript"],
     contributors: {
       'Official Members': [
-        ['Evan You', 'YOU'],
-        ['Eduardo San Martin Morote'],
-        ['katashin'],
-        ['Chris Fritz'],
-        ['Blake Newman'],
-        ['kazuya kawaguchi'],
-        ['chengchao']
+        ['Jason Aden'],
+        ['vsavkin'],
+        ['Victor Berchet'],
+        ['Tobias Bosch'],
+        ['Igor Minar'],
+        ['Peter Bacon Darwin'],
+        ['Alex Eagle'],
+        ['Chuck Jazdzewski']
       ],
       'External': [
-        ['Hanks'],
-        ['AchillesJ'],
-        ['Herrington Darkholme'],
-        ['JK'],
-        ['Phan An'],
-        ['laoxiong']
+        ['Matias Niemelä'],
+        ['Misko Hevery'],
+        ['Georgios Kalpakas'],
+        ['Pawel Kozlowski'],
+        ['Tim Blasi'],
+        ['Marc Laval'],
+        ['Alex Rickabaugh'],
+        ['Brian Ford'],
+        ['Ward Bell']
       ]
     },
     commitMessageFilters: [
@@ -86,10 +93,10 @@ gulp.task('all', [
 
 gulp.task('file', [
    'sloc-trend-analysis',
-   'javascript-complexity-trend-analysis',
+  //'javascript-complexity-trend-analysis',
   //'temporal-coupling-analysis'
   ],
   function() {
-  // Sample: gulp file --targetFile=./src/core/vdom/patch.js [--timeSplit=eom]
+  // Sample: gulp file --targetFile=./packages/core/src/render3/instructions.ts [--timeSplit=eom]
   // temporal-coupling-analysis is not working
 });
