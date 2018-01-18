@@ -24,43 +24,39 @@ defaultParams()
 require('code-forensics').configure(
   {
     repository: {
-      rootPath: "../angular",
+      rootPath: "../react",
       includePaths: [
-        './packages/core',
-        './packages/compiler',
-        './packages/common',
-        './packages/animations',
-        './packages/router',
+        './packages/',
         // './config'
       ],
       excludePaths: [
-        '**/+(*.jpg|*.png|*.gif)',
-        './packages/common/locales',
+        '**/+(*.jpg|*.png|*.gif|*.json)',
+        './packages/react-art/',
         './tmp'
       ],
     },
     languages: ["javascript"],
     contributors: {
       'Official Members': [
-        ['Jason Aden'],
-        ['vsavkin'],
-        ['Victor Berchet'],
-        ['Tobias Bosch'],
-        ['Igor Minar'],
-        ['Peter Bacon Darwin'],
-        ['Alex Eagle'],
-        ['Chuck Jazdzewski']
+        ['Paul O’Shannessy'],
+        ['Sophie Alpert'],
+        ['Dan Abramov'],
+        ['Sebastian Markbåge'],
+        ['Jim Sproch'],
+        ['Pete Hunt'],
+        ['Cheng Lou'],
+        ['Vjeux']
       ],
       'External': [
-        ['Matias Niemelä'],
-        ['Misko Hevery'],
-        ['Georgios Kalpakas'],
-        ['Pawel Kozlowski'],
-        ['Tim Blasi'],
-        ['Marc Laval'],
-        ['Alex Rickabaugh'],
-        ['Brian Ford'],
-        ['Ward Bell']
+        ['Brian Vaughn'],
+        ['Ben Newman'],
+        ['Jeff Morrison'],
+        ['Thomas Aylott'],
+        ['Timothy Yung'],
+        ['Andreas Svensson'],
+        ['Nathan Hunzaker'],
+        ['Christoph Pojer'],
+        ['Brandon Dail']
       ]
     },
     commitMessageFilters: [
