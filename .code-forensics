@@ -1,0 +1,10 @@
+{
+  "sloc": {
+      "basenameMapping": {
+        "FilmDetail.vue": "js"
+      },
+      "extensionMapping": {
+        ".vue": "js"
+      }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "code-forensics": "^0.15.1",
+    "gulp": "^3.9.1",
+    "minimist": "^1.2.0"
+  }
+}
